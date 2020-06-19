@@ -33,7 +33,6 @@ This repository is a quick start guide for running various databases on docker
     -v pgdata:/var/lib/postgresql/data \
     postgres
     ```
-   
-   
-
-
+    
+    Connecting to the posgres container to execute queries without any tool  
+    `docker exec -it <container_id> psql -U <user_name> <database_name>`
