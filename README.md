@@ -27,12 +27,14 @@ This repository is a quick start guide for running various databases on docker
    docker run -d \
     --name postgres-db \
     -p 5432:5432 \
-    -e POSTGRES_USER=berkan \
+    -e POSTGRES_USER\=berkan \
     -e POSTGRES_PASSWORD=passpass \
     -e POSTGRES_DB=books \
     -v pgdata:/var/lib/postgresql/data \
     postgres
     ```
+    
+    Alternatively, run docker-compose up on the path, where docker-compose.yaml exists.
     
     Connecting to the posgres container to execute queries without any tool  
     `docker exec -it <container_id> psql -U <user_name> <database_name>`
