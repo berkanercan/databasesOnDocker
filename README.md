@@ -27,7 +27,7 @@ This repository is a quick start guide for running various databases on docker
    docker run -d \
     --name postgres-db \
     -p 5432:5432 \
-    -e POSTGRES_USER\=berkan \
+    -e POSTGRES_USER=berkan \
     -e POSTGRES_PASSWORD=passpass \
     -e POSTGRES_DB=books \
     -v pgdata:/var/lib/postgresql/data \
