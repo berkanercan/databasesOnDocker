@@ -1,11 +1,13 @@
 # Databases On Docker
 This repository is a quick start guide for running various databases on docker
 
-1. Docker Basics:
+## Docker Basics:
    - List all containers  
      `docker ps -a`
    - List all images  
      `docker images -a`
+   - Run the command in the background  
+      `docker -d <command>`
    - Remove all exited containers  
      `docker rm $(docker ps -a -f status=exited -q)`
    - Remove all images  
@@ -17,7 +19,7 @@ This repository is a quick start guide for running various databases on docker
    - Set environment variables  
      `docker exec -e var='value' <container> <command>`
 
-2. PostgreSql  
+## PostgreSql  
    `docker pull postgres`
    
    Initialize the docker with a user, password and db name.
