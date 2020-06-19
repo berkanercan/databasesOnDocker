@@ -16,10 +16,21 @@ This repository is a quick start guide for running various databases on docker
      `docker exec -u 0 <container> <command>`
    - Set environment variables  
      `docker exec -e var='value' <container> <command>`
+
+2. PostgreSql  
+   `docker pull postgres`
+   
+   Initialize the docker with a user, password and db name.
+   ```
+   docker run -d \
+    --name postgres-db \
+    -e POSTGRES_USER=berkan \
+    -e POSTGRES_PASSWORD=passpass \
+    -e POSTGRES_DB=books \
+    -v pgdata:/var/lib/postgresql/data \
+    postgres
+    ```
    
    
-
-
-1. PostgreSql
 
 
