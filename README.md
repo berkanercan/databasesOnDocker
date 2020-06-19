@@ -23,18 +23,20 @@ This repository is a quick start guide for running various databases on docker
    `docker pull postgres`
    
    Initialize the docker with a user, password and db name.
-   ```
-   docker run -d \
-    --name postgres-db \
-    -p 5432:5432 \
-    -e POSTGRES_USER=berkan \
-    -e POSTGRES_PASSWORD=passpass \
-    -e POSTGRES_DB=books \
-    -v pgdata:/var/lib/postgresql/data \
-    postgres
-    ```
+  
+   `docker run -d \`  
+    `--name postgres-db \`  
+    `-p 5432:5432 \`  
+    `-e POSTGRES_USER=berkan \`  
+    `-e POSTGRES_PASSWORD=passpass \`  
+    `-e POSTGRES_DB=books \`  
+    `-v pgdata:/var/lib/postgresql/data \`  
+    `postgres`  
     
-    Alternatively, run docker-compose up on the path, where docker-compose.yaml exists.
-    
-    Connecting to the posgres container to execute queries without any tool  
-    `docker exec -it <container_id> psql -U <user_name> <database_name>`
+Alternatively, run docker-compose up on the path, where docker-compose.yaml exists. Connecting to the posgres container to execute queries without any tool  
+
+`docker exec -it <container_id> psql -U <user_name> <database_name>`
+
+If an sql file needs to be executed, run the following commands  
+`docker cp ./localfile.sql containername:/container/path/file.sql`  
+`docker exec -u postgresuser containername psql dbname postgresuser -f /container/path/file.sql`
